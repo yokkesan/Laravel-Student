@@ -1,5 +1,8 @@
 FROM php:8.3-apache
 
+RUN sed -i 's|http://deb.debian.org|https://deb.debian.org|g' \
+    /etc/apt/sources.list.d/debian.sources
+
 RUN apt-get update && apt-get install -y \
     zip \
     unzip \
