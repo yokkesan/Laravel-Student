@@ -25,31 +25,30 @@ bash cd Laravel-student
 
 Docker コンテナを起動します。
 
-bash 
-docker compose up --build
+1.docker compose up --build
 
 起動できたらDocker内のappコンテナに入ります。
-docker exec -it laravel-student-app-1 bash
 
----
+2.docker exec -it laravel-student-app-1 bash
+
 
 ## Laravel 初期設定（初回のみ）
 
 依存パッケージをインストールします。
 
-composer install
+1.composer install
 
 .env ファイルを作成します。
 
-cp .env.example .env
+2.cp .env.example .env
 
 アプリケーションキーを生成します。
 
-php artisan key:generate
+3.php artisan key:generate
 
 データベースのテーブルを作成します。
 
-php artisan migrate
+4.php artisan migrate
 
 ---
 
