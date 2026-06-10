@@ -64,3 +64,6 @@ Laravel の初期画面が表示されれば成功です。
 コンテナ停止：
 
 bash docker compose down
+
+## デバックツール使用するなら
+composer require barryvdh/laravel-debugbar --dev
