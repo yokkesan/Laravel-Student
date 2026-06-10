@@ -25,7 +25,11 @@ bash cd Laravel-student
 
 Docker コンテナを起動します。
 
-bash docker compose up --build
+bash 
+docker compose up --build
+
+起動できたらDocker内のappコンテナに入ります。
+docker exec -it laravel-student-app-1 bash
 
 ---
 
@@ -33,19 +37,19 @@ bash docker compose up --build
 
 依存パッケージをインストールします。
 
-bash docker compose exec app composer install
+composer install
 
 .env ファイルを作成します。
 
-bash docker compose exec app cp .env.example .env
+cp .env.example .env
 
 アプリケーションキーを生成します。
 
-bash docker compose exec app php artisan key:generate
+php artisan key:generate
 
 データベースのテーブルを作成します。
 
-bash docker compose exec app php artisan migrate
+php artisan migrate
 
 ---
 
@@ -53,7 +57,7 @@ bash docker compose exec app php artisan migrate
 
 ブラウザで下記へアクセスしてください。
 
-txt http://localhost:8001
+http://localhost:8001
 
 Laravel の初期画面が表示されれば成功です。
 
@@ -67,3 +71,5 @@ bash docker compose down
 
 ## デバックツール使用するなら
 composer require barryvdh/laravel-debugbar --dev
+
+## キャッシュクリアコマンド
